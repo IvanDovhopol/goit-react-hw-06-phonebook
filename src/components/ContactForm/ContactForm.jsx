@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contactsSlice';
 import { getContacts } from 'redux/selectors';
+import { FcContacts } from 'react-icons/fc';
 import toast from 'react-hot-toast';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -10,6 +11,7 @@ import {
   Input,
   Label,
   Button,
+  Logo,
 } from './ContactForm.styled';
 
 const schema = Yup.object({
@@ -44,7 +46,9 @@ export const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       <>
-        <h1>Phonebook</h1>
+        <Logo>
+          Phonebook <FcContacts size="50" />
+        </Logo>
         <StyledForm>
           <Label>
             Name

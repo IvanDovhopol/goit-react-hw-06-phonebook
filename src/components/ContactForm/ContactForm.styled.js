@@ -6,10 +6,18 @@ export const TextError = styled(ErrorMessage)`
   color: ${p => p.theme.colors.error};
 `;
 
+export const Logo = styled.h1`
+  display: inline-flex;
+  align-items: center;
+  background-color: ${p => p.theme.colors.white};
+  border-radius: ${p => p.theme.radii.medium};
+`;
+
 export const StyledForm = styled(Form)`
   max-width: 800px;
   font-weight: ${p => p.theme.fontWeights.extraBold};
   margin: ${p => p.theme.space[0]}px auto;
+  margin-bottom: ${p => p.theme.space[5]}px;
 `;
 
 export const Input = styled(Field)`

@@ -10,12 +10,9 @@ export const Filter = () => {
   }
 
   return (
-    <>
-      <h2>Contacts</h2>
-      <Label>
-        Find contacts by name
-        <Input type="text" onChange={changeFilter} />
-      </Label>
-    </>
+    <Label>
+      Find contacts by name
+      <Input type="text" onChange={changeFilter} />
+    </Label>
   );
 };
