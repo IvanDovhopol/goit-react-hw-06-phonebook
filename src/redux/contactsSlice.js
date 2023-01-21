@@ -14,7 +14,6 @@ export const contactsSlice = createSlice({
   name: 'contacts',
   initialState: {
     contacts,
-    filter: '',
   },
   reducers: {
     addContact: {
@@ -33,17 +32,11 @@ export const contactsSlice = createSlice({
     },
     deleteContact: {
       reducer(state, action) {
-        console.dir(state);
         const index = state.contacts.findIndex(
           contact => contact.id === action.payload
         );
         state.contacts.splice(index, 1);
         deletedToast();
-      },
-    },
-    filteredContacts: {
-      reducer(state, action) {
-        state.filter = action.payload;
       },
     },
   },
@@ -72,6 +65,4 @@ export const contactsReducer = persistReducer(
   persistConfig,
   contactsSlice.reducer
 );
-
-export const { addContact, deleteContact, filteredContacts } =
-  contactsSlice.actions;
+export const { addContact, deleteContact } = contactsSlice.actions;
